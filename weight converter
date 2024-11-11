@@ -1,0 +1,35 @@
+import tkinter
+
+screen = tkinter.Tk()
+screen.geometry("600x200")
+screen.title("Weight converter")
+
+def convert_weight():
+    weight = int(entry.get())
+    grams = weight*1000
+    pounds = weight*2.20462
+    ounces = weight*35.274
+    label5.config(text = grams)
+    label6.config(text = pounds)
+    label7.config(text = ounces)
+
+
+label = tkinter.Label(screen,text = "Enter the weight in Kg",font = ("Arial", 20))
+label2 = tkinter.Label(screen,text = "Gram",font = ("Arial", 20))
+label3 = tkinter.Label(screen,text = "Pounds",font = ("Arial", 20))
+label4 = tkinter.Label(screen,text = "Ounce",font = ("Arial", 20))
+label5 = tkinter.Label(screen,text = "",font = ("Arial", 20))
+label6 = tkinter.Label(screen,text = "",font = ("Arial", 20))
+label7 = tkinter.Label(screen,text = "",font = ("Arial", 20))
+entry = tkinter.Entry(screen)
+button = tkinter.Button(screen,text = "Convert", command = convert_weight)
+label.grid(row = 1, column = 1)
+label2.grid(row = 2, column = 1)
+label3.grid(row = 2, column = 2)
+label4.grid(row = 2, column = 3)
+label5.grid(row = 3, column = 1)
+label6.grid(row = 3, column = 2)
+label7.grid(row = 3, column = 3)
+entry.grid(row = 1, column = 2)
+button.grid(row = 1, column = 3)
+screen.mainloop()
